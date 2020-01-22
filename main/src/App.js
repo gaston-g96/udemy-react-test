@@ -1,6 +1,7 @@
 import React from 'react';
 
 
+
 // class App extends Component{
 //   render(){
 //     const input = 
@@ -15,20 +16,29 @@ import React from 'react';
 // }
 
 const App = () => {
+  const profiles =[
+    {name: "Taro", age : "22"},
+    {name: "hana", age : "10"},
+    {name: "kenji"}
+  ]
   return (
     <div>
-      <Cat />
-      <Cat />
-      <Cat />
-      <Cat />
-      <Cat />
+      {
+        profiles.map((profiles, index) => {
+          return <User name={profiles.name} age={profiles.age} key={index}/>
+        })
+      }
+      
     </div>
   )
 
 }
-const Cat = () => {
-  return <h1>myaoh</h1>
+const User = (props) => {
+return <div>Hi I am { props.name }and{props.age}years!</div>
+}
 
+User.defaultProps ={
+  age : 1
 }
 
 export default App;
