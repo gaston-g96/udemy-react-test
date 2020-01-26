@@ -5,7 +5,7 @@ import { increment, decrement } from '../actions'
 
 
 //class componentを作る。compontは継承して使う
-class　App extends Component{
+class　EventsIndex extends Component{
   render(){
     const props = this.props
 
@@ -22,6 +22,6 @@ const mapStateToProps = state =>({ value: state.count.value })
 const mapDispatchTeoProps =({increment, decrement})
 
 
-export default connect(mapStateToProps, mapDispatchTeoProps)(App)
+export default connect(mapStateToProps, mapDispatchTeoProps)(EventsIndex)
 
 
